@@ -80,3 +80,10 @@ h1 {
     margin-top: 10px;
     background-color: rgba(127, 250, 178, 0.452);
 }
+
+.allQuestion{
+    border: 1px solid rgb(22, 124, 48);
+    margin-bottom: 30px;
+    padding: 2px;
+    border-radius: 5px;
+}
