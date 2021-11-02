@@ -28,7 +28,7 @@ function calculate(numberTwo) {
         document.getElementById("answer-2").innerHTML = `o número ${numberTwo} é maior que 10 ou menor que 1, diga um número entre 1 e 10, por favor.`
     } else {
         for (let i = 1; i <= 10; i++) {
-            x = x +`<p>${i}*${numberTwo}=${i*numberTwo}</p>`
+            x = x + `<p>${i}*${numberTwo}=${i * numberTwo}</p>`
             document.getElementById("answer-2").innerHTML = x
         }
     }
@@ -36,6 +36,29 @@ function calculate(numberTwo) {
 }
 
 function hour() {
-   date = new Date()
-   document.getElementById("answer-3").innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-} 
+    date = new Date()
+    document.getElementById("answer-3").innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+}
+
+function year() {
+    date = new Date()
+    document.getElementById("answer-4").innerHTML = `Estamos no ano de ${1900 + date.getYear()}`
+}
+
+function redirectBigger() {
+    let firstNumber = parseInt(document.getElementById("input-5-1").value)
+    let secondNumber = parseInt(document.getElementById("input-5-2").value)
+    Bigger(firstNumber, secondNumber)
+}
+
+function Bigger(firstNumber, secondNumber) {
+    if (firstNumber > secondNumber) {
+        document.getElementById("answer-5").innerHTML = `O primeiro número, ${firstNumber}, é o maior.`
+    } else {
+        if (firstNumber === secondNumber) {
+            document.getElementById("answer-5").innerHTML = `Os números são iguais.`
+        } else {
+            document.getElementById("answer-5").innerHTML = `O segundo número, ${secondNumber}, é o maior.`
+        }
+    }
+}

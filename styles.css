@@ -39,8 +39,12 @@ h1 {
 
 .input-questions {
     margin-top: 10px;
-    border: none;
+    border: 1px solid rgb(22, 124, 48);
     width: 100%;
+}
+
+#input-5-2 {
+border-left: none;
 }
 
 .input-questions::placeholder {
