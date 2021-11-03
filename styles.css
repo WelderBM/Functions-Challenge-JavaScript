@@ -91,3 +91,8 @@ border-left: none;
     padding: 2px;
     border-radius: 5px;
 }
+
+.question6{
+    border-left: none;
+    border-right: none;
+}
