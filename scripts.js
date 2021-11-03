@@ -80,19 +80,19 @@ function arithmeticAverage() {
     console.log(firstChildnumber, secondChildnumber, thirdChildnumber, fourthChildnumber, fifthChildnumber);
     if (parseInt((document.getElementById("input-6-6").value)) == NaN) {
         firstChildnumber = 0
-    } else{ firstChildnumber = parseInt(document.getElementById("input-6-6").value)}
+    } else { firstChildnumber = parseInt(document.getElementById("input-6-6").value) }
     if (parseInt((document.getElementById("input-6-7").value)) != "NaN") {
         secondChildnumber = parseInt(document.getElementById("input-6-7").value)
-    } else{secondChildnumber = 0}
+    } else { secondChildnumber = 0 }
     if (parseInt((document.getElementById("input-6-8").value)) != "NaN") {
         thirdChildnumber = parseInt(document.getElementById("input-6-8").value)
-    } else{thirdChildnumber = 0}
+    } else { thirdChildnumber = 0 }
     if (parseInt((document.getElementById("input-6-9").value)) != "NaN") {
         fourthChildnumber = parseInt(document.getElementById("input-6-9").value)
-    }else{fourthChildnumber = 0}
+    } else { fourthChildnumber = 0 }
     if (parseInt((document.getElementById("input-6-10").value)) != "NaN") {
         fifthChildnumber = parseInt(document.getElementById("input-6-10").value)
-    } else {fifthChildnumber = 0}
+    } else { fifthChildnumber = 0 }
     console.log(firstChildnumber, secondChildnumber, thirdChildnumber, fourthChildnumber, fifthChildnumber);
 
     firstChildnumber = parseInt(document.getElementById("input-6-6").value)
@@ -140,3 +140,70 @@ function arithmeticAverage() {
 
     document.getElementById("answer-6").innerHTML = x
 }
+
+
+function redirectInvestment() {
+    let initialValue = parseInt(document.getElementById("input-7-1").value)
+    let currentValue = parseInt(document.getElementById("input-7-2").value)
+    let monthTime = parseInt(document.getElementById("input-7-3").value)
+
+    Investment(initialValue, currentValue, monthTime)
+}
+
+function Investment(initialValue, currentValue, monthTime) {
+    let result = (currentValue - initialValue) / (initialValue * monthTime)
+    document.getElementById("answer-7").innerHTML = `${result * 100}%`
+}
+
+
+function redirectdiscount() {
+    let clientNmae = document.getElementById("input-8-1").value
+    let buyValue = parseInt(document.getElementById("input-8-2").value)
+    let firtBuy = document.getElementById("input-8-3").value
+    let cashOrNo = document.getElementById("input-8-4").value
+    discount(clientNmae, buyValue, firtBuy, cashOrNo)
+}
+function discount(clientNmae, buyValue, firtBuy, cashOrNo) {
+    if (firtBuy === "s" && cashOrNo === "s" && buyValue >= 1000) {
+        var discount = 0.3
+    }
+    if (firtBuy === "s" && cashOrNo === "s" && buyValue < 1000 & buyValue >= 500) {
+        var discount = 0.25
+    }
+    if (firtBuy === "s" && cashOrNo === "s" && buyValue < 500) {
+        var discount = 0.2
+    }
+    if (firtBuy === "s" && cashOrNo === "n" && buyValue >= 1000) {
+        var discount = 0.2
+    }
+    if (firtBuy === "s" && cashOrNo === "n" && buyValue < 1000 & buyValue >= 500) {
+        var discount = 0.15
+    }
+    if (firtBuy === "s" && cashOrNo === "n" && buyValue < 500) {
+        var discount = 0.10
+    }
+    if (firtBuy === "n" && cashOrNo === "s" && buyValue >= 1000) {
+        var discount = 0.2
+    }
+    if (firtBuy === "n" && cashOrNo === "s" && buyValue < 1000 & buyValue >= 500) {
+        var discount = 0.15
+    }
+    if (firtBuy === "n" && cashOrNo === "s" && buyValue < 500) {
+        var discount = 0.1
+    }
+    if (firtBuy === "n" && cashOrNo === "n" && buyValue >= 1000) {
+        var discount = 0.2
+    }
+    if (firtBuy === "n" && cashOrNo === "n" && buyValue < 1000 & buyValue >= 500) {
+        var discount = 0.05
+    }
+    if (firtBuy === "n" && cashOrNo === "n" && buyValue < 500) {
+        var discount = 0
+    }
+    if (discount !== 0) {
+        document.getElementById("answer-8").innerHTML = `Nós agradecemos pela sua compra, ${clientNmae}! O valor sem desconto seria ${buyValue}, mas o valor baixou para ${buyValue * (1 - discount)}, pois você adiquiriu um desconto de ${discount * 100}%`
+    } else {
+        document.getElementById("answer-8").innerHTML = `Nós agradecemos pela sua compra, ${clientNmae}! O valor da sua compra é ${buyValue}, mas temos um cupom de ${Math.ceil(Math.random() * 20)}% para sua próxima compra!`
+    }
+}
+
