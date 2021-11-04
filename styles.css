@@ -24,9 +24,8 @@ h1 {
     display: block;
     width: 800px;
     margin: 20px auto 0 auto;
-    padding: 10px 20px;
-    border-right: 8px ridge rgb(22, 124, 48);
-    border-left: 8px ridge rgb(22, 124, 48);
+    padding: 10px 20px 0px 20px;
+    border: 8px ridge rgb(22, 124, 48);
 }
 
 .div-questions {
@@ -35,6 +34,7 @@ h1 {
 
 .h4-questions {
     color: white;
+    padding: 5px;
 }
 
 .input-questions {
@@ -45,7 +45,7 @@ h1 {
 }
 
 #input-5-2 {
-border-left: none;
+    border-left: none;
 }
 
 .input-questions::placeholder {
@@ -61,7 +61,7 @@ border-left: none;
     float: right;
 }
 
-.button-questions:hover{
+.button-questions:hover {
     margin-top: 10px;
     border: none;
     padding: 2px;
@@ -71,7 +71,7 @@ border-left: none;
     cursor: pointer;
 }
 
-.inputAndButton{
+.inputAndButton {
     display: flex;
 }
 
@@ -81,23 +81,65 @@ border-left: none;
     box-shadow: 11px 14px 224px -39px rgba(0, 0, 0, 0.75);
 }
 
-.answer{
+.answer {
     margin-top: 10px;
     background-color: rgba(127, 250, 178, 0.452);
 }
 
-.allQuestion{
+.allQuestion {
     border: 1px solid rgb(22, 124, 48);
     margin-bottom: 30px;
-    padding: 2px;
+    padding: 5px;
     border-radius: 5px;
 }
 
-.question6{
+.question6 {
     border-left: none;
     border-right: none;
 }
 
-#input-7-3, #input-7-2, #input-8-2, #input-8-3, #input-8-4{
+#input-7-3, #input-7-2, #input-8-2, #input-8-3, #input-8-4 {
     border-left: none;
+}
+
+@media(max-width: 800px) {
+    #conteiner {
+        display: block;
+        width: 800px;
+        margin: 0 auto 0 auto;
+        padding: 10px 20px;
+        border-right: 8px ridge rgb(22, 124, 48);
+        border-left: 8px ridge rgb(22, 124, 48);
+        border-bottom: 8px ridge rgb(22, 124, 48);
+        width: 100%;
+    }
+    .inputAndButton {
+        display: block;
+    }
+    .button-questions {
+        margin-top: 10px;
+        border: none;
+        padding: 2px;
+        background-color: rgb(22, 124, 48);
+        color: white;
+        width: 100%;
+        float: none;
+    }
+    .input-questions::placeholder {
+        text-align: left;
+    }
+    #input-5-2, #input-7-3, #input-7-2, #input-8-2, #input-8-3, #input-8-4 {
+        border: 1px solid rgb(22, 124, 48);
+    }
+    .question6 {
+        border: 1px solid rgb(22, 124, 48);
+    }
+}
+
+@media(max-width: 524px) {
+    #header {
+        background-color: rgb(22, 124, 48);
+        height: 100%;
+        padding: 10px;
+    }
 }

@@ -59,10 +59,10 @@ function year() {
 }
 
 function redirectBigger() {
-    document.getElementById("input-5-1").value = ""
-    document.getElementById("input-5-2").value = ""
     let firstNumber = parseInt(document.getElementById("input-5-1").value)
     let secondNumber = parseInt(document.getElementById("input-5-2").value)
+    document.getElementById("input-5-1").value = ""
+    document.getElementById("input-5-2").value = ""
     Bigger(firstNumber, secondNumber)
 }
 
