@@ -4,6 +4,7 @@
 const repass = () => {
     numberOne = parseInt(document.getElementById("input-1").value)
     goUntil(numberOne)
+    document.getElementById("input-1").value = ""
 }
 function goUntil(numberOne) {
     let x = ""
@@ -17,18 +18,30 @@ function goUntil(numberOne) {
     }
 }
 
+document.getElementById("input-2").oninput = function () {
+    if (document.getElementById("input-2").value !== "") {
+        if (this.value < 1) {
+            this.value = 0
+        }
+        if (this.value > 10) {
+            this.value = 10
+        }
+    }
+}
+
 const timesTables = () => {
-    numberTwo = parseInt(document.getElementById("input-2").value)
+    numberTwo = Number(document.getElementById("input-2").value)
     calculate(numberTwo)
 }
 
 function calculate(numberTwo) {
     let x = ""
+    document.getElementById("input-2").value = ""
     if (numberTwo < 1 || numberTwo > 10) {
         document.getElementById("answer-2").innerHTML = `o número ${numberTwo} é maior que 10 ou menor que 1, diga um número entre 1 e 10, por favor.`
     } else {
         for (let i = 1; i <= 10; i++) {
-            x = x + `<p>${i}*${numberTwo}=${i * numberTwo}</p>`
+            x = x + `<p>${i}*${numberTwo}=${(i * numberTwo).toFixed(2)}</p>`
             document.getElementById("answer-2").innerHTML = x
         }
     }
@@ -46,6 +59,8 @@ function year() {
 }
 
 function redirectBigger() {
+    document.getElementById("input-5-1").value = ""
+    document.getElementById("input-5-2").value = ""
     let firstNumber = parseInt(document.getElementById("input-5-1").value)
     let secondNumber = parseInt(document.getElementById("input-5-2").value)
     Bigger(firstNumber, secondNumber)
@@ -64,65 +79,57 @@ function Bigger(firstNumber, secondNumber) {
 }
 
 function arithmeticAverage() {
+
+    if (document.getElementById("input-6-1").value === "" || document.getElementById("input-6-2").value === "" || document.getElementById("input-6-3").value === "" || document.getElementById("input-6-4").value === "" || document.getElementById("input-6-5").value === "" || document.getElementById("input-6-6").value === "" || document.getElementById("input-6-7").value === "" || document.getElementById("input-6-8").value === "" || document.getElementById("input-6-9").value === "" || document.getElementById("input-6-10").value === "") {
+        return document.getElementById("answer-6").innerHTML = "você se esqueceu de algum valor"
+    }
+
     let wageOne = parseInt(document.getElementById("input-6-1").value)
     let wageTwo = parseInt(document.getElementById("input-6-2").value)
     let wageThree = parseInt(document.getElementById("input-6-3").value)
     let wageFour = parseInt(document.getElementById("input-6-4").value)
     let wageFive = parseInt(document.getElementById("input-6-5").value)
 
+    document.getElementById("input-6-1").value = ""
+    document.getElementById("input-6-2").value = ""
+    document.getElementById("input-6-3").value = ""
+    document.getElementById("input-6-4").value = ""
+    document.getElementById("input-6-5").value = ""
+
     let x = ""
 
-    let firstChildnumber = 0
-    let secondChildnumber = 0
-    let thirdChildnumber = 0
-    let fourthChildnumber = 0
-    let fifthChildnumber = 0
-    console.log(firstChildnumber, secondChildnumber, thirdChildnumber, fourthChildnumber, fifthChildnumber);
-    if (parseInt((document.getElementById("input-6-6").value)) == NaN) {
-        firstChildnumber = 0
-    } else { firstChildnumber = parseInt(document.getElementById("input-6-6").value) }
-    if (parseInt((document.getElementById("input-6-7").value)) != "NaN") {
-        secondChildnumber = parseInt(document.getElementById("input-6-7").value)
-    } else { secondChildnumber = 0 }
-    if (parseInt((document.getElementById("input-6-8").value)) != "NaN") {
-        thirdChildnumber = parseInt(document.getElementById("input-6-8").value)
-    } else { thirdChildnumber = 0 }
-    if (parseInt((document.getElementById("input-6-9").value)) != "NaN") {
-        fourthChildnumber = parseInt(document.getElementById("input-6-9").value)
-    } else { fourthChildnumber = 0 }
-    if (parseInt((document.getElementById("input-6-10").value)) != "NaN") {
-        fifthChildnumber = parseInt(document.getElementById("input-6-10").value)
-    } else { fifthChildnumber = 0 }
-    console.log(firstChildnumber, secondChildnumber, thirdChildnumber, fourthChildnumber, fifthChildnumber);
+    let firstChildnumber = parseInt(document.getElementById("input-6-6").value)
+    let secondChildnumber = parseInt(document.getElementById("input-6-7").value)
+    let thirdChildnumber = parseInt(document.getElementById("input-6-8").value)
+    let fourthChildnumber = parseInt(document.getElementById("input-6-9").value)
+    let fifthChildnumber = parseInt(document.getElementById("input-6-10").value)
 
-    firstChildnumber = parseInt(document.getElementById("input-6-6").value)
-    firstChildnumber = parseInt(document.getElementById("input-6-6").value)
-    firstChildnumber = parseInt(document.getElementById("input-6-6").value)
-    firstChildnumber = parseInt(document.getElementById("input-6-6").value)
-    if ((wageOne > wageTwo & wageOne > wageThree && wageOne > wageFour && wageOne > wageFive) || (wageTwo > wageOne && wageTwo > wageThree && wageTwo > wageFour && wageTwo > wageFive) || (wageThree > wageTwo && wageThree > wageOne && wageThree > wageFour && wageThree > wageFive) || (wageFour > wageTwo && wageFour > wageThree && wageFour > wageOne && wageFour > wageFive) || (wageFive > wageTwo && wageFive > wageThree && wageFive > wageFour && wageFive > wageOne)) {
-        if (wageOne > wageTwo && wageOne > wageThree && wageOne > wageFour && wageOne > wageFive) {
-            x = `o salário de valor(${wageOne}) é o maior`
-            document.getElementById("answer-6").innerHTML = `o salário de valor(${wageOne}) é o maior`
-        }
-        if (wageTwo > wageOne && wageTwo > wageThree && wageTwo > wageFour && wageTwo > wageFive) {
-            x = `o salário de valor(${wageTwo}) é o maior`
-        }
-        if (wageThree > wageTwo && wageThree > wageOne && wageThree > wageFour && wageThree > wageFive) {
-            x = `o salário de valor(${wageThree}) é o maior`
-        }
-        if (wageFour > wageTwo && wageFour > wageThree && wageFour > wageOne && wageFour > wageFive) {
-            x = `o salário de valor(${wageFour}) é o maior`
-        }
-        if (wageFive > wageTwo && wageFive > wageThree && wageFive > wageFour && wageFive > wageOne) {
-            x = `o salário de valor(${wageFive}) é o maior`
-        }
+    document.getElementById("input-6-6").value = ""
+    document.getElementById("input-6-7").value = ""
+    document.getElementById("input-6-8").value = ""
+    document.getElementById("input-6-9").value = ""
+    document.getElementById("input-6-10").value = ""
+
+    if (wageOne > wageTwo && wageOne > wageThree && wageOne > wageFour && wageOne > wageFive) {
+        x = `o salário de valor(${wageOne}) é o maior`
+        document.getElementById("answer-6").innerHTML = `o salário de valor(${wageOne}) é o maior`
     }
+    if (wageTwo > wageOne && wageTwo > wageThree && wageTwo > wageFour && wageTwo > wageFive) {
+        x = `o salário de valor(${wageTwo}) é o maior`
+    }
+    if (wageThree > wageTwo && wageThree > wageOne && wageThree > wageFour && wageThree > wageFive) {
+        x = `o salário de valor(${wageThree}) é o maior`
+    }
+    if (wageFour > wageTwo && wageFour > wageThree && wageFour > wageOne && wageFour > wageFive) {
+        x = `o salário de valor(${wageFour}) é o maior`
+    }
+    if (wageFive > wageTwo && wageFive > wageThree && wageFive > wageFour && wageFive > wageOne) {
+        x = `o salário de valor(${wageFive}) é o maior`
+    }
+
     if (wageOne === wageTwo || wageOne === wageThree || wageOne === wageFour || wageOne === wageFive || wageTwo === wageOne || wageTwo === wageThree || wageTwo === wageFour || wageTwo === wageFive || wageThree === wageTwo || wageThree === wageOne || wageThree === wageFour || wageThree === wageFive || wageFour === wageTwo || wageFour === wageThree || wageFour === wageOne || wageFour === wageFive || wageFive === wageTwo || wageFive === wageThree || wageFive === wageFour || wageFive === wageOne) {
         return document.getElementById("answer-6").innerHTML = `Você colocou algum salário igual a outro`
     } else if (x === "") {
-        return document.getElementById("answer-6").innerHTML = `você esqueceu de algum valor`
-    }
-    if (firstChildnumber === 0 || secondChildnumber === 0 || thirdChildnumber === 0 || fourthChildnumber === 0 || fifthChildnumber === 0) {
         return document.getElementById("answer-6").innerHTML = `você esqueceu de algum valor`
     }
 
@@ -143,6 +150,11 @@ function arithmeticAverage() {
 
 
 function redirectInvestment() {
+
+    document.getElementById("input-7-1").value = ""
+    document.getElementById("input-7-2").value = ""
+    document.getElementById("input-7-3").value = ""
+
     let initialValue = parseInt(document.getElementById("input-7-1").value)
     let currentValue = parseInt(document.getElementById("input-7-2").value)
     let monthTime = parseInt(document.getElementById("input-7-3").value)
@@ -157,6 +169,11 @@ function Investment(initialValue, currentValue, monthTime) {
 
 
 function redirectdiscount() {
+    document.getElementById("input-8-1").value = ""
+    document.getElementById("input-8-2").value = ""
+    document.getElementById("input-8-3").value = ""
+    document.getElementById("input-8-4").value = ""
+
     let clientNmae = document.getElementById("input-8-1").value
     let buyValue = parseInt(document.getElementById("input-8-2").value)
     let firtBuy = document.getElementById("input-8-3").value
