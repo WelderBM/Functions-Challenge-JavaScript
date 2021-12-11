@@ -1,36 +1,30 @@
-<h1>Desfio de Funções com JavaScript</h1>
+<h1>Function Challenge with JavaScript</h1>
 
-<p>Este foi um desafio proposto pelo Rodolfo Mori no curso Code Club, mas fui além do pedido e apliquei aprendizados que adquiri ao longo dessa jornada de programador: em vez de vários programas, fiz conectividade de todos os desafios em umúnico programa, vale ressaltar que essa prática serve apenas para fins didáticos, pois diminui a organização, mas contribui para uma boa interface Web; Sem ter chegado no módulo de responsividade, apliquei, por meio de pesquisas, ela em meu projeto; Este projeto, mais que um desafio de curso, foi um esforço pessoal.</p>
+<p>In this project I applied lessons learned along this programmer journey: instead of several programs, I connected all the challenges in a single program; Without having reached the responsiveness module, I applied it, through research, to my project; This project, more than a course challenge, was a personal effort.</p>
 <br>
-<h2>Componentes da execução:</h2>
+<h2>executions components:</h2>
 <ol>
-<li>Estrutura HTML5</li>
-<li>CSS</li>
-<li>JavaScript baseado em funções</li>
-<li>Responsividade</li>
+<li>HTML5 struture</li>
+<li>CSS3</li>
+<li>function based JavaScript</li>
+<li>responsive</li>
 </ol>
 <br>
-<h2>Habilidades adquiridas/ultilizadas</h2>
-<li>Raciocínio lógico de programação</li>
-<li>base em pesquisas para implementação</li>
-<li>humildade de pedir ajuda</li>
-<li>criatividade</li>
+<h2>adquired/ultilized habililties</h2>
+<li>programming logic</li>
+<li>smart search</li>
+<li>humility to ask for help</li>
+<li>creativity</li>
 </ul>
 <br>
-<label>
-Visão do site:
+
+### Site view:
+💥
 <img src="./site-view.png" alt="O site conta com muitos desafios e tem um conjunto de cores com tema verde.">
-</label>
-<br>
-<br>
-<label>
-código javaScript de exemplo:
+### javaScript code exemple:
+💢
 <img src="./javascript.png" alt="O site conta com muitos desafios e tem um conjunto de cores com tema verde.">
-</label>
-<br>
-<br>
-<label>
-códigos CSS responsividade exemplo:
+### responsivity code exemples:
+🤍
 <img src="./css-responsivity-view.png" alt="O site conta com muitos desafios e tem um conjunto de cores com tema verde.">
-</label>
 
